@@ -16,8 +16,6 @@ body {
     min-height: 100vh;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
 }
 
 .container {

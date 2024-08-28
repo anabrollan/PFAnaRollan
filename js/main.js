@@ -13,22 +13,22 @@ let LIST = [];
 loadList();
 
 function loadList() {
-    let data = localStorage.getItem('BOOKLIST');
+let data = localStorage.getItem('BOOKLIST');
     if (data) {
         LIST = JSON.parse(data);
         id = LIST.length;
         uploadList(LIST);
     } else {
         fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                LIST = data;
-                id = LIST.length;
-                uploadList(LIST);
-                localStorage.setItem('BOOKLIST', JSON.stringify(LIST));
+        .then(response => response.json())
+        .then(data => {
+            LIST = data;
+            id = LIST.length;
+            uploadList(LIST);
+            localStorage.setItem('BOOKLIST', JSON.stringify(LIST));
             })
-            .catch(error => {
-                console.error('Error al cargar los datos:', error);
+        .catch(error => {
+            console.error('Error al cargar los datos:', error);
             });
     }
 }
@@ -53,6 +53,7 @@ const newItem = `
     </li>
     `;
     list.insertAdjacentHTML("beforeend", newItem);
+}
 
 function readBook(newItem) {
     const icon = newItem;
