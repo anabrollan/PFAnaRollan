@@ -140,3 +140,10 @@ list.addEventListener('click', function(event) {
     }
     localStorage.setItem('BOOKLIST', JSON.stringify(LIST));
 });
+
+const DATE = new Date();
+date.innerHTML = DATE.toLocaleDateString('es-CL', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric'
+});
