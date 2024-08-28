@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Tsundoku</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tsundoku">
+            <h1>¿Qué significa <span>tsundoku?</span></h1>
+            <p><span>Tsundoku</span> es un término japonés que se refiere al hábito de comprar libros que terminas por no leer nunca. Puedes leer más al respecto <a href="https://www.bbc.com/mundo/noticias-50913608">en este enlace</a>.</p>
+            <p>¿Quieres dejar de acumular libros que no has leído? Agrega acá tu lista completa y disfruta del placer de verlos tachados cuando por fin los vayas leyendo :)</p>
+        </div>
+        <div class="add-book">
+            <input type="text" id="input" placeholder="Agrega un nuevo libro">
+            <i id="enter" class="fa-solid fa-square-plus"></i>
+        </div>
+        <div class="book-list">
+            <h3>Tu lista de libros pendientes</h3>
+            <h5 id="date"></h5>
+            <ul id="book-list">             
+            </ul>
+        </div>
+    </div>
+<script src="./js/main.js"></script>
+</body>
+</html>
