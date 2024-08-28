@@ -42,10 +42,10 @@ function uploadList(DATA) {
 function addBook(book, id, read, deleted) {
     if (deleted) return;
 
-    const READ = read ? `fa-regular ${check}` : `fa-regular ${uncheck}`;
-    const LINE = read ? lineThrough : '';
+const READ = read ? `fa-regular ${check}` : `fa-regular ${uncheck}`;
+const LINE = read ? lineThrough : '';
 
-    const newItem = `
+const newItem = `
     <li>                
         <i class="${READ}" data="read" id="${id}"></i>
         <p class="text ${LINE}">${book}</p>
@@ -53,3 +53,22 @@ function addBook(book, id, read, deleted) {
     </li>
     `;
     list.insertAdjacentHTML("beforeend", newItem);
+
+function readBook(newItem) {
+    const icon = newItem;
+    
+        if (icon.classList.contains(check)) {
+            icon.classList.remove(check);
+            icon.classList.add(uncheck);
+        } else {
+            icon.classList.remove(uncheck);
+            icon.classList.add(check);
+        }
+    
+    const textElement = icon.nextElementSibling;
+        if (textElement) {
+            textElement.classList.toggle(lineThrough);
+            const itemId = parseInt(icon.id);
+            LIST[itemId].read = !LIST[itemId].read; 
+        }
+    }
