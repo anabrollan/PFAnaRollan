@@ -72,3 +72,27 @@ function readBook(newItem) {
             LIST[itemId].read = !LIST[itemId].read; 
         }
     }
+
+enter.addEventListener('click', () => {
+    const book = input.value;
+        if (book) {
+            addBook(book, id, false, false);
+            LIST.push({
+                name: book,
+                id: id,
+                read: false,
+                deleted: false
+            });
+            id++;
+    
+        Swal.fire({
+            title: '¡Libro agregado!',
+            text: `Se ha agregado "${book}" a tu estantería.`,
+            icon: 'success',
+            confirmButtonText: 'Listo'
+            });
+    
+        localStorage.setItem('BOOKLIST', JSON.stringify(LIST));
+        }
+        input.value = '';
+    });
