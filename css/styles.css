@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    font-style: italic;
+}
+
+body {
+    background-image: url(../assets/library.jpg);
+    background-size: cover;
+    background-position: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.container {
+    max-width: 80%;
+    display: grid;
+    place-items: center;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.tsundoku {
+    background-color: #F2BEA0;
+    color: #283040;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.tsundoku h1, .tsundoku p {
+    padding: 10px;
+}  
+
+.add-book {
+    background-color: #BF8B78;
+    color: #283040;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.add-book input {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #BF8B78;
+    color: #283040;
+    padding: 5px;
+}
+
+.add-book i {
+    font-size: 25px;
+}
+
+.add-book i:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.add-book input::placeholder {
+    font-size: 1.1rem;
+    color: #283040;
+}
+
+.book-list {
+    background-color: #283040;
+    color: #BF8B78;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.book-list h3 {
+    margin-bottom: 20px;
+}
+
+.book-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.book-list i:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
