@@ -39,3 +39,17 @@ function uploadList(DATA) {
     });
 }
 
+function addBook(book, id, read, deleted) {
+    if (deleted) return;
+
+    const READ = read ? `fa-regular ${check}` : `fa-regular ${uncheck}`;
+    const LINE = read ? lineThrough : '';
+
+    const newItem = `
+    <li>                
+        <i class="${READ}" data="read" id="${id}"></i>
+        <p class="text ${LINE}">${book}</p>
+        <i class="fa-solid fa-delete-left" data="delete" id="${id}"></i>
+    </li>
+    `;
+    list.insertAdjacentHTML("beforeend", newItem);
