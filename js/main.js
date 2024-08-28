@@ -96,3 +96,47 @@ enter.addEventListener('click', () => {
         }
         input.value = '';
     });
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        const book = input.value;
+        if (book) {
+            addBook(book, id, false, false);
+            LIST.push({
+                name: book,
+                id: id,
+                read: false,
+                deleted: false
+                });
+                id++;
+    
+            Swal.fire({
+                title: '¡Libro agregado!',
+                text: `Se ha agregado "${book}" a tu estantería.`,
+                icon: 'success',
+                confirmButtonText: 'Listo'
+                });
+    
+                localStorage.setItem('BOOKLIST', JSON.stringify(LIST));
+            }
+            input.value = '';
+        }
+    });
+
+function deleteBook(newItem) {
+    const itemId = parseInt(newItem.id);
+    LIST[itemId].deleted = true;
+    newItem.parentElement.remove();
+}
+
+list.addEventListener('click', function(event) {
+    const newItem = event.target;
+    const newItemData = newItem.attributes.data.value;
+
+    if (newItemData === 'read') {
+        readBook(newItem);
+    } else if (newItemData === 'delete') {
+        deleteBook(newItem);
+    }
+    localStorage.setItem('BOOKLIST', JSON.stringify(LIST));
+});
